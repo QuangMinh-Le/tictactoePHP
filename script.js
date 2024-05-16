@@ -1,3 +1,5 @@
+const gridSize = 10;  // Change this to increase the number of rows and columns
+const winCondition = 5;
 let board = [];
 let currentPlayer = 'X';
 let gameMode = 'human';
@@ -12,7 +14,7 @@ function startGame(mode) {
 }
 
 function resetGame() {
-    board = Array.from({ length: 5 }, () => Array(5).fill(''));
+    board = Array.from({ length: gridSize }, () => Array(gridSize).fill(''));
     currentPlayer = 'X';
     renderBoard();
 }
@@ -20,8 +22,10 @@ function resetGame() {
 function renderBoard() {
     const boardElement = document.getElementById('board');
     boardElement.innerHTML = '';
-    for (let i = 0; i < 5; i++) {
-        for (let j = 0; j < 5; j++) {
+    boardElement.style.gridTemplateColumns = `repeat(${gridSize}, 40px)`;
+    boardElement.style.gridTemplateRows = `repeat(${gridSize}, 40px)`;
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
             const cell = document.createElement('div');
             cell.className = 'cell';
             cell.dataset.row = i;
@@ -60,16 +64,34 @@ function isDraw() {
 }
 
 function checkWin(player) {
-    const winConditions = [
-        // Rows
-        ...board.map(row => row.every(cell => cell === player)),
-        // Columns
-        ...board[0].map((_, colIndex) => board.every(row => row[colIndex] === player)),
-        // Diagonals
-        board.every((row, rowIndex) => row[rowIndex] === player),
-        board.every((row, rowIndex) => row[4 - rowIndex] === player)
-    ];
-    return winConditions.some(condition => condition);
+    const checkDirection = (row, col, deltaRow, deltaCol) => {
+        let count = 0;
+        for (let i = 0; i < winCondition; i++) {
+            const newRow = row + i * deltaRow;
+            const newCol = col + i * deltaCol;
+            if (newRow < 0 || newRow >= gridSize || newCol < 0 || newCol >= gridSize || board[newRow][newCol] !== player) {
+                return false;
+            }
+            count++;
+        }
+        return count === winCondition;
+    };
+
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+            if (board[i][j] === player) {
+                if (
+                    checkDirection(i, j, 1, 0) ||  // Check row
+                    checkDirection(i, j, 0, 1) ||  // Check column
+                    checkDirection(i, j, 1, 1) ||  // Check diagonal
+                    checkDirection(i, j, 1, -1)    // Check anti-diagonal
+                ) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
 }
 
 function aiMove() {
