@@ -1,4 +1,4 @@
-const gridSize = 10;  // Change this to increase the number of rows and columns
+const gridSize = 20;  // Change this to increase the number of rows and columns
 const winCondition = 5;
 let board = [];
 let currentPlayer = 'X';
