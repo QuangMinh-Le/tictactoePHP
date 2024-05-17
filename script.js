@@ -1,17 +1,34 @@
-const gridSize = 20;  // Change this to increase the number of rows and columns
+const gridSize = 20;
 const winCondition = 5;
 let board = [];
 let currentPlayer = 'X';
 let gameMode = 'human';
 let scoreX = 0;
 let scoreO = 0;
+let player1Name = 'Player 1';
+let player2Name = 'Player 2';
+
+function showPlayerForm() {
+    document.getElementById('menu').style.display = 'none';
+    document.getElementById('playerForm').style.display = 'block';
+}
 
 function startGame(mode) {
     gameMode = mode;
     document.getElementById('menu').style.display = 'none';
+    document.getElementById('playerForm').style.display = 'none';
     document.getElementById('game').style.display = 'block';
     resetGame();
 }
+
+document.getElementById('playerNamesForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    player1Name = document.getElementById('player1Name').value;
+    player2Name = document.getElementById('player2Name').value;
+    document.getElementById('player1Label').innerText = player1Name;
+    document.getElementById('player2Label').innerText = player2Name;
+    startGame('human');
+});
 
 function resetGame() {
     board = Array.from({ length: gridSize }, () => Array(gridSize).fill(''));
@@ -22,8 +39,8 @@ function resetGame() {
 function renderBoard() {
     const boardElement = document.getElementById('board');
     boardElement.innerHTML = '';
-    boardElement.style.gridTemplateColumns = `repeat(${gridSize}, 40px)`;
-    boardElement.style.gridTemplateRows = `repeat(${gridSize}, 40px)`;
+    boardElement.style.gridTemplateColumns = `repeat(${gridSize}, 30px)`;
+    boardElement.style.gridTemplateRows = `repeat(${gridSize}, 30px)`;
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
             const cell = document.createElement('div');
@@ -136,6 +153,9 @@ function resetScores() {
 function backToMenu() {
     document.getElementById('game').style.display = 'none';
     document.getElementById('menu').style.display = 'block';
+    document.getElementById('playerForm').style.display = 'none';
 }
 
-resetGame();
+document.addEventListener('DOMContentLoaded', (event) => {
+    resetGame();
+});
