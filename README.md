@@ -11,12 +11,6 @@ This project is a web-based implementation of the classic Tic Tac Toe game with 
     - **Human vs. Human**: Two players play against each other.
     - **Human vs. AI**: A single player competes against an AI opponent.
 
-## Features
-
-- **Responsive Design**: The game adapts to various screen sizes for optimal user experience on both desktop and mobile devices.
-- **Intuitive UI/UX**: The interface is designed to be user-friendly, making it easy to understand and play the game.
-- **AI Opponent**: The AI mode provides a challenging experience with varying difficulty levels.
-
 ## Technologies Used
 
 - **HTML**: Structure of the game.
@@ -47,15 +41,4 @@ To run the game locally, follow these steps:
 
 Play the game online: [Tic Tac Toe Game](https://david5x5tictactoe.netlify.app)
 
-## Contributing
-
-If you'd like to contribute to the project, feel free to fork the repository and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License.
-
-## Contact
-
-For any inquiries or feedback, please contact [David Nguyen](mailto:lnguy131@uOttawa.ca).
 
