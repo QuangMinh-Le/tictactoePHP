@@ -3,16 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title> Tic-Tac-Toe</title>
+=======
+    <title>20x20 Tic-Tac-Toe</title>
+>>>>>>> 746573fcec2e3e542703856c9eed4ec7b49aec6c
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="menu">
+<<<<<<< HEAD
         <h1> Tic Tac Toe</h1>
         <button onclick="showPlayerForm()">Play vs Human</button>
         <button onclick="startGame('ai', 'easy')">Play vs AI (Easy)</button>
         <button onclick="startGame('ai', 'medium')">Play vs AI (Medium)</button>
         <button onclick="startGame('ai', 'hard')">Play vs AI (Hard)</button>
+    </div>
+    <div id="playerForm" style="display:none;">
+        <h1>Enter Player Names</h1>
+        <form id="playerNamesForm">
+            <div>
+                <label for="player1Name">Player 1 Name (X):</label>
+                <input type="text" id="player1Name" required>
+            </div>
+            <div>
+                <label for="player2Name">Player 2 Name (O):</label>
+                <input type="text" id="player2Name" required>
+            </div>
+            <button type="submit">Start Game</button>
+            <button type="button" onclick="backToMenu()">Back to Menu</button>
+        </form>
+=======
+        <h1>20x20 Tic-Tac-Toe</h1>
+        <button onclick="showPlayerForm()">Play vs Human</button>
+        <button onclick="startGame('ai')">Play vs AI</button>
+>>>>>>> 746573fcec2e3e542703856c9eed4ec7b49aec6c
     </div>
     <div id="playerForm" style="display:none;">
         <h1>Enter Player Names</h1>
