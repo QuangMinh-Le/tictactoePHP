@@ -17,8 +17,21 @@ function showPlayerForm() {
 function startGame(mode, level = 'easy') {
     gameMode = mode;
     difficulty = level;
+
+    // Reset scores and player names
+    scoreX = 0;
+    scoreO = 0;
+    player1Name = 'Player X';
+    player2Name = 'Player O';
+    document.getElementById('scoreX').innerText = scoreX;
+    document.getElementById('scoreO').innerText = scoreO;
+    document.getElementById('player1Label').innerText = player1Name;
+    document.getElementById('player2Label').innerText = player2Name;
+
     if (mode === 'human') {
         document.getElementById('playerForm').style.display = 'block';
+        document.getElementById('menu').style.display = 'none';
+        document.getElementById('game').style.display = 'none';
     } else {
         document.getElementById('menu').style.display = 'none';
         document.getElementById('game').style.display = 'block';
@@ -207,7 +220,7 @@ function detectThreeInARow(player, row, col) {
     const directions = [
         { deltaRow: 1, deltaCol: 0 },
         { deltaRow: 0, deltaCol: 1 },
-        { deltaRow: 1, deltaCol: 1 },
+        { deltaRow: 1,  deltaCol: 1 },
         { deltaRow: 1, deltaCol: -1 }
     ];
 
@@ -263,7 +276,20 @@ function resetScores() {
 }
 
 function backToMenu() {
+    // Reset scores and player names
+    scoreX = 0;
+    scoreO = 0;
+    player1Name = 'Player X';
+    player2Name = 'Player O)';
+    document.getElementById('scoreX').innerText = scoreX;
+    document.getElementById('scoreO').innerText = scoreO;
+    document.getElementById('player1Label').innerText = player1Name;
+    document.getElementById('player2Label').innerText = player2Name;
+
+    // Hide game and player form sections
     document.getElementById('game').style.display = 'none';
     document.getElementById('playerForm').style.display = 'none';
+
+    // Show main menu
     document.getElementById('menu').style.display = 'block';
 }
