@@ -261,4 +261,5 @@ function backToMenu() {
     document.getElementById('menu').style.display = 'block';
 }
 
+
 resetGame();
