@@ -8,14 +8,6 @@ let scoreX = 0;
 let scoreO = 0;
 let player1Name = 'Player 1';
 let player2Name = 'Player 2';
-<<<<<<< HEAD
-=======
-
-function showPlayerForm() {
-    document.getElementById('menu').style.display = 'none';
-    document.getElementById('playerForm').style.display = 'block';
-}
->>>>>>> 746573fcec2e3e542703856c9eed4ec7b49aec6c
 
 function showPlayerForm() {
     document.getElementById('menu').style.display = 'none';
@@ -26,7 +18,6 @@ function startGame(mode, level = 'easy') {
     gameMode = mode;
     difficulty = level;
     document.getElementById('menu').style.display = 'none';
-    document.getElementById('playerForm').style.display = 'none';
     document.getElementById('game').style.display = 'block';
     document.getElementById('playerForm').style.display = 'none';
     resetGame();
@@ -50,8 +41,8 @@ function resetGame() {
 function renderBoard() {
     const boardElement = document.getElementById('board');
     boardElement.innerHTML = '';
-    boardElement.style.gridTemplateColumns = `repeat(${gridSize}, 30px)`;
-    boardElement.style.gridTemplateRows = `repeat(${gridSize}, 30px)`;
+    boardElement.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    boardElement.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
             const cell = document.createElement('div');
@@ -268,9 +259,6 @@ function resetScores() {
 function backToMenu() {
     document.getElementById('game').style.display = 'none';
     document.getElementById('menu').style.display = 'block';
-    document.getElementById('playerForm').style.display = 'none';
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    resetGame();
-});
+resetGame();
