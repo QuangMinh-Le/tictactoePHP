@@ -17,10 +17,14 @@ function showPlayerForm() {
 function startGame(mode, level = 'easy') {
     gameMode = mode;
     difficulty = level;
-    document.getElementById('menu').style.display = 'none';
-    document.getElementById('game').style.display = 'block';
-    document.getElementById('playerForm').style.display = 'none';
-    resetGame();
+    if (mode === 'human') {
+        document.getElementById('playerForm').style.display = 'block';
+    } else {
+        document.getElementById('menu').style.display = 'none';
+        document.getElementById('game').style.display = 'block';
+        document.getElementById('playerForm').style.display = 'none';
+        resetGame();
+    }
 }
 
 document.getElementById('playerNamesForm').addEventListener('submit', function (event) {
@@ -29,7 +33,9 @@ document.getElementById('playerNamesForm').addEventListener('submit', function (
     player2Name = document.getElementById('player2Name').value;
     document.getElementById('player1Label').innerText = player1Name;
     document.getElementById('player2Label').innerText = player2Name;
-    startGame('human');
+    document.getElementById('playerForm').style.display = 'none';
+    document.getElementById('game').style.display = 'block';
+    resetGame();
 });
 
 function resetGame() {
@@ -258,8 +264,6 @@ function resetScores() {
 
 function backToMenu() {
     document.getElementById('game').style.display = 'none';
+    document.getElementById('playerForm').style.display = 'none';
     document.getElementById('menu').style.display = 'block';
 }
-
-
-resetGame();
