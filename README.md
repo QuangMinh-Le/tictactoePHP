@@ -2,10 +2,16 @@
 
 This project is a web-based implementation of the classic Tic Tac Toe game with a twist: the first player to align five marks in a row wins! The game includes two modes: Human vs. Human and Human vs. AI.
 
+## Assignment 2 - Group 20:
+
+Quang Minh Le - 300165003
+
+David Nguyen - 300232884
+
 ## Game Rules
 
 1. **Board**: The game is played on a grid.
-2. **Objective**: The first player to get five of their marks in a row (horizontally, vertically, or diagonally) wins the game.
+2. **Objective**: The first player to get 5 of their marks in a row (horizontally, vertically, or diagonally) wins the game.
 3. **Turns**: Players take turns placing their marks (X or O) on the grid.
 4. **Modes**: 
     - **Human vs. Human**: Two players play against each other.
@@ -41,4 +47,12 @@ To run the game locally, follow these steps:
 
 Play the game online: [Tic Tac Toe Game](https://david5x5tictactoe.netlify.app)
 
+## Screenshots of the various user interface states
 
+1. Screenshot of homepage:
+
+![Screenshot of homepage](docs/design_system/Hompage.png)
+
+2. Screenshot of game page:
+
+![Screenshot of game page](docs/design_system/GamePage.png)
