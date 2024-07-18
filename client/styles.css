@@ -7,7 +7,7 @@ body {
     height: 100vh;
     margin: 0;
     background: linear-gradient(145deg, #1de099, #1dc8cd);
-    background-image: url(docs/design_system/Background-Homepage.jpg);
+    background-image: url(../docs/design_system/Background-Homepage.jpg);
 }
 
 

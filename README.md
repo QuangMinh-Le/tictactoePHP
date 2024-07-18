@@ -2,7 +2,7 @@
 
 This project is a web-based implementation of the classic Tic Tac Toe game with a twist: the first player to align five marks in a row wins! The game includes two modes: Human vs. Human and Human vs. AI.
 
-## Assignment 2 - Group 20:
+## Assignment 3 - Group 20:
 
 Quang Minh Le - 300165003
 
