@@ -22,7 +22,7 @@ David Nguyen - 300232884
 
 - **HTML**: Structure of the game.
 - **CSS**: Styling of the game.
-- **JavaScript**: Game logic and interactivity.
+- **JavaScript, PHP(AJAX)**: Game logic and interactivity.
 
 ## Installation
 
