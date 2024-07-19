@@ -8,6 +8,7 @@ Quang Minh Le - 300165003
 
 David Nguyen - 300232884
 
+
 ## Game Rules
 
 1. **Board**: The game is played on a grid.
@@ -35,7 +36,9 @@ To run the game locally, follow these steps:
     ```bash
     cd tictactoe
     ```
-3. Open `index.html` in your browser to start playing.
+3. Run <code>php -S localhost:8000</code>
+
+4. Then CRTL + click on the url (http://localhost:8000) in the terminal
 
 ## How to Play
 
@@ -51,7 +54,7 @@ Play the game online: [Tic Tac Toe Game](https://david5x5tictactoe.netlify.app)
 
 1. Screenshot of homepage:
 
-![Screenshot of homepage](docs/design_system/Hompage.png)
+![Screenshot of homepage](docs/design_system/Homepage.png)
 
 2. Screenshot of game page:
 

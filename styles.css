@@ -94,4 +94,20 @@ form div {
     margin-bottom: 10px;
 }
 
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #44c767;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeout 3s forwards;
+}
 
+@keyframes fadeout {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
